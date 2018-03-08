@@ -10,32 +10,44 @@ public class Ex13 {
 			}
 		}
 		matrix2Print(nums);
-		trans2Matrix(nums);
-		matrix2Print(nums);
+		matrix2Print(trans2Matrix(nums));
 
 		
 	}
-	public static void trans2Matrix(int[][] a){
-		int temp = a[0][0];
-		for(int i = 1; i < a.length; i++){
-			for(int j = 0; j<a[0].length; j++){
-				temp = a[i][j];
-				a[i][j] = a[j][i];
-				a[j][i] = temp;
+	public static int[][] trans2Matrix(int[][] a){
+		int m = a.length ;
+		int n = a[0].length;
+		int[][] trans = new int[n][m];
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < m ; j++){
+				trans[i][j] = a[j][i];
 			}
 		}
+		return trans;
 		
 	}
 	public static void matrix2Print(int nums[][]){
 		
 		for(int i = 0 ; i < nums.length; i++){
 			for(int j = 0; j<nums[0].length; j++){
-				System.out.print(nums[i][j]);
+				System.out.print(nums[i][j]+" ");
 			}
 			System.out.println("");
 		}
 
 		
+	}
+
+	public static void matrix2Print(double nums[][]){
+
+		for(int i = 0 ; i < nums.length; i++){
+			for(int j = 0; j<nums[0].length; j++){
+				System.out.print(nums[i][j]+" ");
+			}
+			System.out.println("");
+		}
+
+
 	}
 
 }
